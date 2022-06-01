@@ -1,16 +1,12 @@
-import './App.css';
-import EmaJhon from './components/ema-jhon/EmaJhon';
-import Codevolution from './components/Codevolution/Codevolution';
-import ReduxBNG from './components/Readux_BNG/Redux_BNG';
+import "./App.css";
+import CounterApp from "./CounterApp/CounterApp";
 
 function App() {
-  return (
-    <div className="App">
-      <ReduxBNG />
-      {/* <Codevolution /> */}
-      {/* <EmaJhon /> */}
-    </div>
-  );
+	return (
+		<div className='App'>
+			<CounterApp />
+		</div>
+	);
 }
 
 export default App;
