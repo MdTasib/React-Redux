@@ -1,6 +1,7 @@
 import "./App.css";
 import CounterApp from "./CounterApp/CounterApp";
 import CounterAppToolkit from "./CounterAppToolkit/CounterAppToolkit";
+import CrudToolkit from "./CrudToolkit/CrudToolkit";
 import TodoAppToolkit from "./TodoAppToolkit/TodoAppToolkit";
 import Todos from "./Todos/Todos";
 
@@ -10,7 +11,8 @@ function App() {
 			{/* <CounterApp /> */}
 			{/* <Todos /> */}
 			{/* <CounterAppToolkit /> */}
-			<TodoAppToolkit />
+			{/* <TodoAppToolkit /> */}
+			<CrudToolkit />
 		</div>
 	);
 }
