@@ -6,7 +6,7 @@ const Navbar = () => {
 	return (
 		<div className={styles.navbar}>
 			<Link to='/'>
-				<h2 className={styles.navbar__logo}>Redux Shopping Cart</h2>
+				<h4 className={styles.navbar__logo}>Redux Shopping Cart</h4>
 			</Link>
 			<Link to='/cart'>
 				<div className={styles.navbar__cart}>

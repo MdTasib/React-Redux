@@ -2,13 +2,22 @@ import React from "react";
 import styles from "./Products.module.css";
 
 import Product from "./Product/Product";
+import { connect } from "react-redux";
 
-const Products = () => {
-  return (
-    <div className={styles.products}>
-      <Product />
-    </div>
-  );
+const Products = ({ products }) => {
+	return (
+		<div className={styles.products}>
+			{products.map(product => (
+				<Product key={product.id} product={product} />
+			))}
+		</div>
+	);
 };
 
-export default Products;
+const mapStateToProps = state => {
+	return {
+		products: state.shop.products,
+	};
+};
+
+export default connect(mapStateToProps)(Products);
