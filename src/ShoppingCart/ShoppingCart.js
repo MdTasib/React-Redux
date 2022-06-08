@@ -13,9 +13,9 @@ const ShoppingCart = () => {
 			<BrowserRouter>
 				<Navbar />
 				<Routes>
-					<Route exact path='/' element={<Products />} />
-					<Route exact path='/cart' component={<Cart />} />
-					<Route exact path='/product/:id' component={<SingleItem />} />
+					<Route path='/' element={<Products />} />
+					<Route path='/cart' element={<Cart />} />
+					<Route path='/product/:id' element={<SingleItem />} />
 				</Routes>
 			</BrowserRouter>
 		</Provider>
