@@ -4,10 +4,10 @@ import Navbar from "./components/Navbar/Navbar";
 import Cart from "./components/Cart/Cart";
 import SingleItem from "./components/SingleItem/SingleItem";
 import Products from "./components/Products/Products";
-import { Provider } from "react-redux";
 import store from "./redux/store";
+import { Provider } from "react-redux";
 
-const ShoppingCart = () => {
+const ShoppingCart = ({ current }) => {
 	return (
 		<Provider store={store}>
 			<BrowserRouter>
