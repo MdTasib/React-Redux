@@ -64,3 +64,12 @@ footer {
 	align-items: center;
 	padding: 1rem;
 }
+
+/* shopping cart project */
+.app {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}

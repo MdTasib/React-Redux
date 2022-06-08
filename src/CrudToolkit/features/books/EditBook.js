@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { updateBook } from "./BookSlice";
 
 const EditBook = () => {
 	const location = useLocation();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const [id, setId] = useState(location.state.id);
 	const [name, setName] = useState(location.state.name);
@@ -20,6 +21,7 @@ const EditBook = () => {
 		};
 
 		dispatch(updateBook(updatedBook));
+		navigate("/show-books");
 	}
 
 	return (

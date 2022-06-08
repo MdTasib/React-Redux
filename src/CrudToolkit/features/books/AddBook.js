@@ -6,7 +6,6 @@ import { addBook } from "./BookSlice";
 const AddBook = () => {
 	const [name, setName] = useState("");
 	const [author, setAuthor] = useState("");
-	const numbersOfBooks = useSelector(state => state.booksReducer.books.length);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -15,7 +14,7 @@ const AddBook = () => {
 		const book = {
 			name,
 			author,
-			id: numbersOfBooks + 1,
+			id: Math.random() * 1000,
 		};
 
 		console.log(book);
