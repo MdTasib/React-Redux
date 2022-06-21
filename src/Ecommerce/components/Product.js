@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import Loading from "./Loading";
+import { addCart } from "../redux/action/index";
 
 const Product = () => {
 	const { id } = useParams();
 	const [product, setProduct] = useState([]);
 	const [loading, setLoading] = useState(false);
+
+	const dispatch = useDispatch();
+	const addProduct = product => {
+		dispatch(addCart(product));
+	};
 
 	useEffect(() => {
 		const getProduct = async () => {
@@ -28,7 +35,7 @@ const Product = () => {
 			) : (
 				<div className='container row justify-content-center align-items-center py-5'>
 					<div className='col-md-6'>
-						<img src={product.image} className='w-100' alt='' />
+						<img src={product.image} className='w-75' alt='' />
 					</div>
 					<div className='col-md-6'>
 						<h5 className='text-uppercase text-black-50'>{product.category}</h5>
@@ -42,7 +49,9 @@ const Product = () => {
 
 						<div className='row align-items-center'>
 							<div className='col-md-6'>
-								<button className='btn btn-outline-dark w-100'>
+								<button
+									className='btn btn-outline-dark w-100'
+									onClick={() => addProduct(product)}>
 									ADD TO CART
 								</button>
 							</div>
