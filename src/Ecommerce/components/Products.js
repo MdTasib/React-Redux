@@ -27,20 +27,45 @@ const Products = () => {
 		getProducts();
 	}, []);
 
+	const filterProduct = category => {
+		const newProducts = data.filter(product => product.category === category);
+		setFilter(newProducts);
+	};
+
 	return (
 		<div className='container py-5'>
 			<h2 className='text-center fw-bolder'>Latest Products</h2>
 			<div className='buttons d-flex justify-content-center'>
-				<button className='btn btn-outline-dark me-2'>ALL</button>
-				<button className='btn btn-outline-dark me-2 w-100'>MEN</button>
-				<button className='btn btn-outline-dark me-2 w-100'>WOMEN</button>
-				<button className='btn btn-outline-dark me-2 w-100'>JEWELERY</button>
-				<button className='btn btn-outline-dark me-2 w-100'>ELECTRONIC</button>
+				<button
+					className='btn btn-outline-dark me-2'
+					onClick={() => setFilter(data)}>
+					ALL
+				</button>
+				<button
+					className='btn btn-outline-dark me-2 w-100'
+					onClick={() => filterProduct("men's clothing")}>
+					MEN
+				</button>
+				<button
+					className='btn btn-outline-dark me-2 w-100'
+					onClick={() => filterProduct("women's clothing")}>
+					WOMEN
+				</button>
+				<button
+					className='btn btn-outline-dark me-2 w-100'
+					onClick={() => filterProduct("jewelery")}>
+					JEWELERY
+				</button>
+				<button
+					className='btn btn-outline-dark me-2 w-100'
+					onClick={() => filterProduct("electronics")}>
+					ELECTRONIC
+				</button>
 			</div>
 			{loading ? (
 				<Loading />
 			) : (
-				<div className='row g-3 pt-5'>
+				<div className='row justify-content-center g-3 pt-5'>
 					{filter.map(product => (
 						<div className='col-md-3'>
 							<div class='card h-100 text-center border-0 shadow-sm'>
