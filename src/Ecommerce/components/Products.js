@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Loading from "./Loading";
 
 const Products = () => {
@@ -80,9 +81,11 @@ const Products = () => {
 										{product.title.substring(0, 12)}...
 									</h5>
 									<p class='card-text fw-bold'>$ {product.price}</p>
-									<a href='#' class='btn btn-outline-dark'>
+									<Link
+										to={`/product/${product.id}`}
+										class='btn btn-outline-dark'>
 										BUY NOW
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>

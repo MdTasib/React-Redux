@@ -1,14 +1,21 @@
 import React from "react";
-import Header from "./components/Header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import Product from "./components/Product";
 import Products from "./components/Products";
 
 const Ecommerce = () => {
 	return (
 		<div>
-			<Navbar />
-			<Header />
-			<Products />
+			<BrowserRouter>
+				<Navbar />
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/products' element={<Products />} />
+					<Route path='/product/:id' element={<Product />} />
+				</Routes>
+			</BrowserRouter>
 		</div>
 	);
 };
